@@ -1,0 +1,23 @@
+@import '../includes/mixins';
+@import '../includes/variables';
+@import '../includes/colors';
+
+.container {
+    max-width: 1440px;
+    width: calc(100% - (#{$page-gutter-mobile} * 2));
+    margin: 0 auto;
+    position: relative;
+
+    @include when-wider-than(tablet) {
+        width: calc(100% - (#{$page-gutter-tablet} * 2));
+    }
+
+    @include when-wider-than(small-desktop) {
+        width: calc(100% - (#{$page-gutter-small-desktop} * 2));
+    }
+
+    @include when-wider-than(large-desktop) {
+        width: calc(100% - (#{$page-gutter-large-desktop} * 2));
+        max-width: 1440px;
+    }
+}
